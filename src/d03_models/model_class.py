@@ -10,10 +10,11 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
 
 class modelSelection:
-    def __init__(self, algorithm, X, y):
+    def __init__(self, algorithm, algorithm_name, X, y):
         self.algorithm = algorithm
         self.X = X
         self.y = y
+        self.algorithm_name = algorithm_name
 
     def train_test_split_func(self):
         self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(self.X, self.y, stratify=self.y, random_state=88)
@@ -33,7 +34,7 @@ class modelSelection:
     def model_evaluation(self):
         print('Acccuracy Score: ', self.accuracy)
         print('Precision: ', self.precision)
-        print('Recall', self.recall)
+        print('Recall: ', self.recall)
         print('\n')
         print('Confusion Matrix:')
         print(self.confusion_matrix)
