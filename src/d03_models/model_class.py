@@ -1,24 +1,39 @@
+import numpy as np
 import pandas as pd
-from sklearn.metrics import accuracy_score, confusion_matrix, precision_score
 from sklearn.model_selection import train_test_split, RandomizedSearchCV, GridSearchCV
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
+from sklearn.naive_bayes import BernoulliNB, GaussianNB
+from sklearn.metrics import accuracy_score, confusion_matrix, precision_score, recall_score
+from sklearn.pipeline import Pipeline
+from sklearn.linear_model import LogisticRegression
+from sklearn.preprocessing import StandardScaler
 
 class modelSelection:
-    def __init__(self, algorithm, dataset, target_variable):
-        self.y = dataset['successful_dummy']
-        self.df_no_y = dataset.drop('successful_dummy', axis=1)
-        self.X_feats = ['category', 'blurb_word_count', 'campaign_length',
-                   'delta_created_launched', 'goal_usd','world_regions',
-                   'cluster_predictions']
-        self.X = pd.get_dummies(df_no_y[X_feats])
+    def __init__(self, algorithm, X, y):
         self.algorithm = algorithm
-        self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(X, y, stratify=y)
+        self.X = X
+        self.y = y
 
-    def fit(X_train, y_train):
-        self.algorithm.fit(X_train, y_train)
+    def train_test_split_func(self):
+        self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(self.X, self.y, stratify=self.y, random_state=88)
 
-    def predict(X_test):
-        self.y_pred = self.algorithm.predict(X_test)
+    def fit_func(self):
+        self.algorithm.fit(self.X_train, self.y_train)
 
-    def accuracy(x):
-        self.accuracy = accuracy_score(y_test, y_pred)
-        return self.accuracy
+    def predict_func(self):
+        self.prediction = self.algorithm.predict(self.X_test)
+        self.accuracy = accuracy_score(self.y_test, self.prediction)
+        self.precision = precision_score(self.y_test, self.prediction)
+        self.recall = recall_score(self.y_test, self.prediction)
+        self.confusion_matrix = pd.DataFrame(confusion_matrix(self.y_test, self.prediction),
+                     index = ['actual 0', 'actual 1'],
+                     columns = ['predicted 0', 'predicted 1'])
+
+    def model_evaluation(self):
+        print('Acccuracy Score: ', self.accuracy)
+        print('Precision: ', self.precision)
+        print('Recall', self.recall)
+        print('\n')
+        print('Confusion Matrix:')
+        print(self.confusion_matrix)
