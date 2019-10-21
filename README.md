@@ -30,8 +30,8 @@ In order to increase the number of successful campaigns, we propose two related 
 
 1. Clone this repo.
 2. The dataset can be found in the data folder [here](https://github.com/mishaberrien/crowdfunding_campaign_selection/tree/master/data/02_intermediate).
-3. In order to reproduce results, run the notebook found in the "results" located [here](#).
-4. The data processing/transformation scripts are being kept in the src folder [here](#)
+3. In order to reproduce results, run the notebook found in the "results" located [here](https://github.com/mishaberrien/crowdfunding_campaign_selection/tree/master/results).
+4. The data processing/transformation scripts are being kept in the src folder [here](https://github.com/mishaberrien/crowdfunding_campaign_selection/tree/master/src)
 
 5. A data dictionary can be found in the references folder [here](#)
 
