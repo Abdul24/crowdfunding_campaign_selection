@@ -33,11 +33,11 @@ In order to increase the number of successful campaigns, we propose two related 
 3. In order to reproduce results, run the notebook found in the "results" located [here](https://github.com/mishaberrien/crowdfunding_campaign_selection/tree/master/results).
 4. The data processing/transformation scripts are being kept in the src folder [here](https://github.com/mishaberrien/crowdfunding_campaign_selection/tree/master/src)
 
-5. A data dictionary can be found in the references folder [here](#)
+5. A data dictionary can be found in the references folder [here](https://github.com/mishaberrien/crowdfunding_campaign_selection/tree/master/references)
 
 
 ## Featured Notebooks/Analysis/Deliverables
-* [Technical Results Notebook](#)
+* [Technical Results Notebook](https://mishaberrien.com/crowdfunding_campaign_selection/)
 
 ---
 
