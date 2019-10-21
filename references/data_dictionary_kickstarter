@@ -1,0 +1,36 @@
+#################################
+###### KICKSTARTER DATASET ######
+#################################
+
+● backers_count - (quantitative) number of people who backed the project
+● blurb - (categorical) description of the project
+● sub_catagory - (categorical) kickstarter project category
+● overall_category (categorical) - kickstarter project category
+● converted_pledged_amount - (quantitative)
+● country - (categorical) Country of origin for the campaign
+● created_at - (datetime) date and time the campaign was created
+● creator - (categorical) name of the person that started the campaign
+● currency - (categorical )currency that the asking amount is originally in
+● current_currency - (categorical) currency that the asking amount is in.
+● deadline - (datetime) date and time for the end of the kickstarter campaign
+● disable_communication - (bool) shows if they disabled the comments section
+● fx_rate - (quantitative) exchange rate
+● goal - (quantitative) goal amount for the kickstarter campaign
+● id - (categorical) unique campaign ID
+● launched_at - (datetime) date and time the campaign was launched.
+● city - (categorical) city campaign was launched in
+● country_loc - (categorical) country the campaign was launched in
+● state_loc - (categorical) state the campaign was launched in.
+● name - (categorical) name of the kickstarter project
+● pledged - (quantitative) amount of money that has been pledged so far
+● spotlight - (bool) Was this project spotlighted by kickstarter
+● staff_pick - (bool) is this project a staff pick
+● state - (categorical) [should be turned into bool] lists the current state of the project.
+  There are 5 possible states:
+    1. live (campaigns that were still ongoing at the time of data collection)\
+    2. successful
+    3. failed
+    4. suspended
+    5. cancelled
+● state_changed_at - (datetime) date and time the state of the project changed.
+● usd_pledged - (quantitative) amount of money pledged by backers in USD
