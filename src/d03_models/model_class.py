@@ -31,6 +31,9 @@ class modelSelection:
                      index = ['actual 0', 'actual 1'],
                      columns = ['predicted 0', 'predicted 1'])
 
+    def predict_probability_func(self):
+        self.probability_prediction = self.algorithm.predict_proba(self.X_test)
+
     def model_evaluation(self):
         print('Acccuracy Score: ', self.accuracy)
         print('Precision: ', self.precision)
